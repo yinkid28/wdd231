@@ -217,9 +217,9 @@ section h2 {
 }
 
 .filter-btn {
-    background: var(--light-gray);
-    border: 2px solid var(--medium-gray);
-    color: var(--text-color);
+    background: var(--white);
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
     padding: 0.5rem 1rem;
     border-radius: 0.25rem;
     cursor: pointer;
