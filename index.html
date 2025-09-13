@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD231 Course Home Page - Web Frontend Development 1 website by Adeyinka Adedayo. This website includes a personal introduction and course information.">
+    <meta name="author" content="Adeyinka Adedayo">
+    <title>WDD231 - Course Home Page</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/small.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    
+    <!-- JavaScript Files -->
+    <script defer src="scripts/navigation.js"></script>
+    <script defer src="scripts/courses.js"></script>
+    <script defer src="scripts/dates.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo-section">
+                <svg class="logo" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                </svg>
+                <h1 class="site-name">Adeyinka Adedayo</h1>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">☰</button>
+        </div>
+        <nav id="navigation">
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Chamber Project</a></li>
+                <li><a href="#">Final Project</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>WDD231 - Course Home Page</h1>
+
+        <section>
+            <h2>About Me</h2>
+            <div class="section-content about-section-content">
+                <div>
+                    <p class="about-text">
+                        My name is Adeyinka Adedayo. I am a student at Brigham Young University (BYU), 
+                        currently pursuing a Bachelor of Science degree in Software Development. At the 
+                        moment, I am working on my first certificate course in Web and Computer Programming. 
+                        I am 22 years old and originally from Nigeria.
+                        I am passionate about becoming a software developer who creates meaningful solutions 
+                        that will make a positive impact in Nigeria and throughout the world. With faith in 
+                        Jesus Christ guiding me, I am committed to using my skills and knowledge to contribute 
+                        to a brighter future.
+                    </p>
+                </div>
+                <div class="student-photo">
+                    <img src="images/prof_pic.jpg" alt="Photo of Adeyinka Adedayo">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Student Photo</h2>
+            <div class="section-content">
+                <div class="student-photo-large">
+                    <img src="images/prof_pic.jpg" alt="Professional photo of Adeyinka Adedayo">
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Web Certificate Courses</h2>
+            <div class="section-content">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="CSE">CSE</button>
+                    <button class="filter-btn" data-filter="WDD">WDD</button>
+                </div>
+                <div class="courses-grid" id="courses-grid">
+                    <!-- Courses will be dynamically inserted here -->
+                </div>
+                <div class="credits-total" id="credits-total">
+                    The total credits for courses listed above is 0
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://linkedin.com" aria-label="LinkedIn"></a>
+                <a href="https://github.com" aria-label="GitHub"></a>
+                <a href="https://twitter.com" aria-label="Twitter"></a>
+            </div>
+            <p class="footer-info">
+                © <span id="currentyear"></span> • Adeyinka Adedayo • Lagos, Nigeria
+            </p>
+            <p class="footer-info" id="lastModified"></p>
+        </div>
+    </footer>
+</body>
+</html>

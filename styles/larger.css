@@ -1,0 +1,80 @@
+/* Large Screen Styles with Media Query */
+@media (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+
+    nav {
+        position: static;
+        background: transparent;
+        max-height: none;
+        overflow: visible;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 0;
+        justify-content: center;
+    }
+
+    nav li {
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    nav li:last-child {
+        border-right: none;
+    }
+
+    nav a {
+        padding: 0.75rem 1.5rem;
+    }
+
+    nav a.active::before {
+        display: none;
+    }
+
+    .courses-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .filter-buttons {
+        justify-content: center;
+    }
+
+    .filter-btn {
+        flex: none;
+        min-width: 120px;
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        padding: 3rem 1rem;
+    }
+
+    .section-content {
+        padding: 2rem;
+    }
+
+    .about-section-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .courses-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+}
+
+@media (min-width: 1200px) {
+    .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
