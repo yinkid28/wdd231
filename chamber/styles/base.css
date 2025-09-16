@@ -519,3 +519,9 @@ a:focus {
     color: #ff6b6b;
     background-color: #2d1b1b;
 }
+
+
+.fa-rotate-by {
+    transform: rotate(var(--fa-rotate-angle, 0deg));
+  }
+    
