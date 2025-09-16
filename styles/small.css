@@ -344,3 +344,7 @@ footer {
     color: var(--light-gray);
     margin-bottom: 0.5rem;
 }
+
+.fa-rotate-by {
+    transform: rotate(var(--fa-rotate-angle, 0deg));
+  }
