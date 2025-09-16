@@ -1,0 +1,305 @@
+/* Larger Screen Styles - Tablet and Desktop */
+
+/* Tablet Styles - 768px and up */
+@media (min-width: 48rem) {
+    .header-container {
+        padding: 1.5rem 2rem;
+        flex-wrap: nowrap;
+    }
+
+    .logo-section h1 {
+        font-size: 1.5rem;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex;
+        position: static;
+        flex-direction: row;
+        background: none;
+        padding: 0;
+        box-shadow: none;
+        gap: 1.5rem;
+    }
+
+    .nav-menu a {
+        padding: 0.5rem 1rem;
+    }
+
+    .theme-toggle {
+        order: initial;
+    }
+
+    main {
+        padding: 2rem;
+    }
+
+    .directory-header h2 {
+        font-size: 2.5rem;
+    }
+
+    .directory-header p {
+        font-size: 1.1rem;
+    }
+
+    .directory-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .member-header {
+        flex-wrap: nowrap;
+    }
+
+    .member-contact {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-info {
+        grid-template-columns: 1fr auto;
+        text-align: left;
+    }
+
+    .social-media {
+        justify-content: flex-end;
+    }
+}
+
+/* Desktop Styles - 1024px and up */
+@media (min-width: 64rem) {
+    .header-container {
+        padding: 1.5rem 2rem;
+    }
+
+    .logo-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .nav-menu {
+        gap: 2rem;
+    }
+
+    .nav-menu a {
+        padding: 0.75rem 1.25rem;
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 3rem 2rem;
+    }
+
+    .directory-header {
+        margin-bottom: 3rem;
+    }
+
+    .directory-header h2 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .directory-header p {
+        font-size: 1.2rem;
+    }
+
+    .directory-controls {
+        margin-bottom: 3rem;
+    }
+
+    .view-btn {
+        padding: 1rem 1.25rem;
+    }
+
+    .directory-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .member-card {
+        padding: 2rem;
+    }
+
+    .member-logo {
+        width: 70px;
+        height: 70px;
+        font-size: 1.4rem;
+    }
+
+    .member-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .member-tagline {
+        font-size: 1rem;
+    }
+
+    .member-contact {
+        font-size: 1rem;
+    }
+
+    .member-contact strong {
+        min-width: 80px;
+    }
+
+    .membership-level {
+        padding: 0.5rem 1.25rem;
+        font-size: 0.9rem;
+    }
+
+    /* List view adjustments for desktop */
+    .directory-list .member-card {
+        padding: 1.5rem 2rem;
+    }
+
+    .directory-list .member-logo {
+        width: 50px;
+        height: 50px;
+        font-size: 1.1rem;
+    }
+
+    .directory-list .member-contact {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .footer-container {
+        padding: 0 2rem;
+    }
+
+    .footer-info {
+        gap: 3rem;
+    }
+
+    .social-media a {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* Large Desktop Styles - 1440px and up */
+@media (min-width: 90rem) {
+    .header-container {
+        padding: 2rem;
+    }
+
+    .logo-section h1 {
+        font-size: 2rem;
+    }
+
+    .nav-menu {
+        gap: 2.5rem;
+    }
+
+    .nav-menu a {
+        padding: 1rem 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    main {
+        padding: 4rem 2rem;
+    }
+
+    .directory-header h2 {
+        font-size: 3.5rem;
+    }
+
+    .directory-grid {
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        gap: 3rem;
+    }
+
+    .member-card {
+        padding: 2.5rem;
+    }
+
+    .member-logo {
+        width: 80px;
+        height: 80px;
+        font-size: 1.6rem;
+    }
+
+    .member-info h3 {
+        font-size: 1.5rem;
+    }
+
+    .directory-list .member-contact {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Ultra-wide Screen Adaptations - 1920px and up */
+@media (min-width: 120rem) {
+    .header-container,
+    main,
+    .footer-container {
+        max-width: 1400px;
+    }
+
+    .directory-grid {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+}
+
+/* High DPI Display Optimizations */
+@media (min-resolution: 2dppx) {
+    .member-logo {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        background-size: 200% 200%;
+        animation: gradient-shift 3s ease infinite;
+    }
+
+    @keyframes gradient-shift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+}
+
+/* Print Styles */
+@media print {
+    header,
+    .directory-controls,
+    .theme-toggle,
+    .social-media,
+    footer {
+        display: none;
+    }
+
+    main {
+        margin: 0;
+        padding: 0;
+    }
+
+    .directory-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .member-card {
+        padding: 1rem;
+    }
+
+    .member-logo {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+    }
+
+    .member-info h3 {
+        font-size: 1rem;
+    }
+
+    .member-tagline {
+        font-size: 0.8rem;
+    }
+
+    .member-contact {
+        font-size: 0.8rem;
+    }
+
+    .member-contact strong {
+        min-width: 50px;
+    }
+}

@@ -1,0 +1,521 @@
+/* Base CSS - Mobile First Design */
+
+:root {
+    --primary-color: #1b4d2b; /* Darker green for strong contrast */
+    --secondary-color: #4a7c59; /* Deep green accent */
+    --background-color: #f4f4f4;
+    --text-color: #111111; /* Very dark gray instead of #333 */
+    --card-background: #ffffff;
+    --border-color: #bbb;
+    --hover-color: #0e331b; /* Dark hover */
+    --shadow: 0 2px 8px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --primary-color: #4caf50; /* Bright green for readability */
+    --secondary-color: #ff9800; /* Orange accent for contrast */
+    --background-color: #121212; /* True dark */
+    --text-color: #f5f5f5; /* Bright text */
+    --card-background: #1e1e1e; /* Darker cards */
+    --border-color: #666;
+    --hover-color: #81c784; /* Lighter green hover */
+    --shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    transition: var(--transition);
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--card-background);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.logo-section h1 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Navigation - Mobile First */
+.menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+    padding: 0.5rem;
+    order: 3;
+}
+
+.nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--card-background);
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: var(--shadow);
+    list-style: none;
+    gap: 0.5rem;
+}
+
+.nav-menu.show {
+    display: flex;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+    display: block;
+}
+
+.nav-menu a:hover,
+.nav-menu a.current {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.theme-toggle {
+    order: 2;
+}
+
+.theme-toggle button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: var(--transition);
+    color: var(--text-color);
+}
+
+.theme-toggle button:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+    min-height: calc(100vh - 200px);
+}
+
+.directory-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.directory-header h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.directory-header p {
+    font-size: 1rem;
+    color: var(--text-color);
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.directory-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.view-toggle {
+    display: flex;
+    gap: 0.25rem;
+    background-color: var(--card-background);
+    padding: 0.25rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.view-btn {
+    background: none;
+    border: none;
+    padding: 0.75rem;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: var(--transition);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.view-btn.active,
+.view-btn:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* Directory Grid - Mobile First */
+.directory-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.directory-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Member Cards */
+.member-card {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.member-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.member-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--border-color);
+}
+
+.member-card.gold::before {
+    background-color: #ffd700;
+}
+
+.member-card.silver::before {
+    background-color: #c0c0c0;
+}
+
+.member-card.member::before {
+    background-color: #a0522d;
+}
+
+.member-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.member-logo {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #fff;
+    flex-shrink: 0;
+    font-size: 1.2rem;
+}
+
+.member-info {
+    flex: 1;
+    min-width: 200px;
+}
+
+.member-info h3 {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.member-tagline {
+    color: var(--text-color);
+    opacity: 0.85;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.member-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.member-contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.member-contact p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.member-contact strong {
+    color: var(--primary-color);
+    min-width: 60px;
+}
+
+.member-contact a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.member-contact a:hover {
+    text-decoration: underline;
+    color: var(--hover-color);
+}
+
+.membership-level {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    align-self: flex-start;
+}
+
+.level-gold {
+    background-color: #ffd700;
+    color: #000; /* Black text for best readability */
+}
+
+.level-silver {
+    background-color: #c0c0c0;
+    color: #000;
+}
+
+.level-member {
+    background-color: #8b4513; /* Darker brown */
+    color: #fff;
+}
+
+/* List View Styles */
+.directory-list .member-card {
+    padding: 1rem 1.5rem;
+}
+
+.directory-list .member-header {
+    margin-bottom: 0.75rem;
+}
+
+.directory-list .member-logo {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+}
+
+.directory-list .member-info h3 {
+    font-size: 1.1rem;
+}
+
+.directory-list .member-contact {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.directory-list .membership-level {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.7rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 2rem 0 1rem;
+    margin-top: auto;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-info {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.contact-info h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.contact-info address {
+    font-style: normal;
+    line-height: 1.8;
+}
+
+.contact-info a {
+    color: #ffcc80; /* Soft amber for contrast */
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-media a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    color: #fff;
+    transition: var(--transition);
+}
+
+.social-media a:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.development-info p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+    opacity: 0.95;
+}
+
+/* Loading Animation */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.loading::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--secondary-color);
+    border-top: 2px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Focus and Accessibility */
+button:focus,
+a:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Error States */
+.error-message {
+    text-align: center;
+    padding: 2rem;
+    color: #d32f2f;
+    background-color: #ffebee;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+[data-theme="dark"] .error-message {
+    color: #ff6b6b;
+    background-color: #2d1b1b;
+}

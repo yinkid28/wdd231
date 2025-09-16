@@ -1,0 +1,64 @@
+[
+    {
+      "name": "Acme Corporation",
+      "address": "123 Main St, Anytown USA",
+      "phone": "555-123-4567",
+      "website": "https://www.acmecorp.com",
+      "image": "acme.webp",
+      "membershipLevel": "Gold",
+      "otherInfo": "Leading manufacturer of widgets since 1950."
+    },
+    {
+      "name": "Globex Inc.",
+      "address": "456 Oak Ave, Anytown USA",
+      "phone": "555-987-6543",
+      "website": "https://www.globexinc.com",
+      "image": "globex.webp",
+      "membershipLevel": "Silver",
+      "otherInfo": "Innovators in global logistics and supply chain solutions."
+    },
+    {
+      "name": "Soylent Corp",
+      "address": "789 Pine Ln, Anytown USA",
+      "phone": "555-111-2222",
+      "website": "https://www.soylentcorp.com",
+      "image": "soylent.webp",
+      "membershipLevel": "Member",
+      "otherInfo": "Pioneering sustainable food alternatives."
+    },
+    {
+      "name": "Umbrella Corporation",
+      "address": "101 Elm St, Anytown USA",
+      "phone": "555-333-4444",
+      "website": "https://www.umbrellacorp.com",
+      "image": "umbrella.webp",
+      "membershipLevel": "Member",
+      "otherInfo": "Global leader in pharmaceuticals and biotechnology."
+    },
+    {
+      "name": "Weyland-Yutani Corp",
+      "address": "202 Birch Rd, Anytown USA",
+      "phone": "555-555-6666",
+      "website": "https://www.weyland-yutani.com",
+      "image": "weyland.webp",
+      "membershipLevel": "Silver"
+    },
+    {
+      "name": "Initech",
+      "address": "303 Cedar St, Anytown USA",
+      "phone": "555-777-8888",
+      "website": "https://www.initech.com",
+      "image": "initech.webp",
+      "membershipLevel": "Member",
+      "otherInfo": "Specializing in software solutions for businesses."
+    },
+    {
+      "name": "Hooli",
+      "address": "404 Maple Ave, Anytown USA",
+      "phone": "555-999-0000",
+      "website": "https://www.hooli.com",
+      "image": "hooli.webp",
+      "membershipLevel": "Gold",
+      "otherInfo": "Innovative technology company focused on internet services."
+    }
+]
