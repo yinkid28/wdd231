@@ -1,4 +1,9 @@
-// Join Page JavaScript Functionality
+// Join Page JavaScript Functionality with Navigation
+
+// DOM Elements
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+const themeToggle = document.getElementById('theme-toggle');
 
 // Set timestamp when page loads
 document.addEventListener('DOMContentLoaded', function() {
@@ -7,15 +12,68 @@ document.addEventListener('DOMContentLoaded', function() {
     const now = new Date();
     timestampField.value = now.toISOString();
 
-    // Initialize modal functionality
+    // Initialize all functionality
+    setupEventListeners();
+    initializeTheme();
     initializeModals();
-    
-    // Initialize form validation
     initializeFormValidation();
-    
-    // Set animation delays for cards
     setCardAnimations();
+    updateFooterDates();
 });
+
+// Setup event listeners for navigation and theme
+function setupEventListeners() {
+    // Mobile menu toggle
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+    }
+
+    // Theme toggle
+    if (themeToggle) {
+        themeToggle.addEventListener('click', toggleTheme);
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('nav') && !e.target.closest('.menu-toggle')) {
+            if (navMenu) {
+                navMenu.classList.remove('show');
+            }
+        }
+    });
+
+    // Close mobile menu when window is resized to larger size
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navMenu) {
+            navMenu.classList.remove('show');
+        }
+    });
+}
+
+// Theme management
+function initializeTheme() {
+    const savedTheme = localStorage.getItem('chamber-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+}
+
+function toggleTheme() {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('chamber-theme', newTheme);
+    updateThemeIcon(newTheme);
+}
+
+function updateThemeIcon(theme) {
+    if (themeToggle) {
+        themeToggle.textContent = theme === 'light' ? '🌙' : '☀️';
+        themeToggle.setAttribute('aria-label', `Switch to ${theme === 'light' ? 'dark' : 'light'} mode`);
+    }
+}
 
 // Modal functionality
 function initializeModals() {
@@ -260,3 +318,20 @@ setInterval(() => {
         timestampField.value = now.toISOString();
     }
 }, 30000); // Update every 30 seconds
+
+// Update footer dates
+function updateFooterDates() {
+    const currentYear = new Date().getFullYear();
+    const lastModified = new Date(document.lastModified);
+    
+    const currentYearElement = document.getElementById('currentYear');
+    const lastModifiedElement = document.getElementById('lastModified');
+    
+    if (currentYearElement) {
+        currentYearElement.textContent = currentYear;
+    }
+    
+    if (lastModifiedElement) {
+        lastModifiedElement.textContent = lastModified.toLocaleString();
+    }
+}

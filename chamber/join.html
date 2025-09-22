@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Us - Abuja Chamber of Commerce</title>
-    <meta name="description" content="Join the Timbuktu Chamber of Commerce and connect with Mali's business community. 
-    Access networking, resources, and support for local entrepreneurs and businesses.">
+    <title>Join Us - Timbuktu Chamber of Commerce</title>
+    <meta name="description" content="Join the Timbuktu Chamber of Commerce and connect with Mali's business community. Access networking, resources, and support for local entrepreneurs and businesses.">
     <meta name="author" content="Adeyinka Adedayo">
 
     <!-- Facebook Open Graph Meta Tags -->
     <meta property="og:title" content="Join the Timbuktu Chamber of Commerce">
     <meta property="og:description" content="Join the Timbuktu Chamber of Commerce and connect with Mali's business community. Access networking, resources, and support for local entrepreneurs and businesses.">
     <meta property="og:image" content="https://your-github-username.github.io/wdd231/chamber/images/timbuktu-chamber-og.jpg">
-    <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/directory.html">
+    <meta property="og:url" content="https://your-github-username.github.io/wdd231/chamber/join.html">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Timbuktu Chamber of Commerce">
 
      <!-- Google Fonts -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,21 +24,20 @@
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 
     <!-- CSS Files -->
-
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/join.css">
     <link rel="stylesheet" href="styles/medium.css">
-    <link rel="stylesheet" href="styles/large.css">
+    <link rel="stylesheet" href="styles/larger.css">
 </head>
 <body>
     <header>
         <div class="header-container">
             <div class="logo-section">
-                <div class="logo">ACC</div>
-                <h1>Abuja Chamber of Commerce</h1>
+                <img src="images/logo.jpg" alt="Timbuktu Chamber Logo" class="logo">
+                <span class="site-name">Timbuktu Chamber of Commerce</span>
             </div>
             <nav>
-                <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+                <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="discover.html">Discover</a></li>
@@ -46,13 +45,16 @@
                     <li><a href="join.html" class="current">Join</a></li>
                 </ul>
             </nav>
+            <div class="theme-toggle">
+                <button id="theme-toggle" aria-label="Toggle dark mode">🌙</button>
+            </div>
         </div>
     </header>
 
     <main>
         <div class="join-container">
             <div class="join-header">
-                <h1>Join the Abuja Chamber of Commerce</h1>
+                <h1>Join the Timbuktu Chamber of Commerce</h1>
                 <p>Become part of our thriving business community and unlock opportunities for growth, networking, and success.</p>
             </div>
 
@@ -231,7 +233,7 @@
                     <address>
                         10 Rue De La Paix<br>
                         Timbuktu, Mali 999<br>
-                        <a href="info@timbuktucc.org">info@timbuktucc.org</a><br>
+                        <a href="mailto:info@timbuktucc.org">info@timbuktucc.org</a><br>
                         <a href="tel:+2235552300">(223) 555-2300</a>
                     </address>
                 </div>
@@ -267,4 +269,4 @@
     <script src="scripts/chamber.js"></script>
     <script src="scripts/join.js"></script>
 </body>
-</html> 
+</html>
