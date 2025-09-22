@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Submitted - Abuja Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/medium.css">
+    <link rel="stylesheet" href="styles/large.css">
+    <style>
+        .thankyou-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        .thankyou-header {
+            margin-bottom: 3rem;
+        }
+
+        .thankyou-header h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .thankyou-header p {
+            font-size: 1.2rem;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            animation: bounceIn 1s ease;
+        }
+
+        .application-summary {
+            background: var(--card-background);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin: 2rem 0;
+            text-align: left;
+            animation: slideInUp 1s ease;
+        }
+
+        .application-summary h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .summary-item {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+
+        .summary-label {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .summary-value {
+            color: var(--text-color);
+            word-break: break-word;
+        }
+
+        .next-steps {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            animation: fadeIn 1.2s ease;
+        }
+
+        .next-steps h3 {
+            margin-bottom: 1rem;
+        }
+
+        .next-steps ul {
+            text-align: left;
+            list-style: none;
+            padding: 0;
+        }
+
+        .next-steps li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .next-steps li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .back-home {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+            margin-top: 2rem;
+            animation: fadeIn 1.4s ease;
+        }
+
+        .back-home:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0%, 20%, 40%, 60%, 80% {
+                animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+            0% {
+                opacity: 0;
+                transform: scale3d(0.3, 0.3, 0.3);
+            }
+            20% {
+                transform: scale3d(1.1, 1.1, 1.1);
+            }
+            40% {
+                transform: scale3d(0.9, 0.9, 0.9);
+            }
+            60% {
+                opacity: 1;
+                transform: scale3d(1.03, 1.03, 1.03);
+            }
+            80% {
+                transform: scale3d(0.97, 0.97, 0.97);
+            }
+            100% {
+                opacity: 1;
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .summary-item {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            
+            .thankyou-header h1 {
+                font-size: 2rem;
+            }
+            
+            .success-icon {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo">ACC</div>
+                <h1>Abuja Chamber of Commerce</h1>
+            </div>
+            <nav>
+                <button class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="thankyou-container">
+            <div class="thankyou-header">
+                <div class="success-icon">✅</div>
+                <h1>Application Submitted Successfully!</h1>
+                <p>Thank you for your interest in joining the Abuja Chamber of Commerce. We appreciate you taking the time to complete our membership application.</p>
+            </div>
+
+            <div class="application-summary">
+                <h2>Application Summary</h2>
+                <div id="summaryContent">
+                    <!-- Summary will be populated by JavaScript -->
+                </div>
+            </div>
+
+            <div class="next-steps">
+                <h3>What Happens Next?</h3>
+                <ul>
+                    <li>Our membership team will review your application within 2-3 business days</li>
+                    <li>You will receive a confirmation email with membership details and next steps</li>
+                    <li>A member of our team will contact you to schedule an orientation meeting</li>
+                    <li>Upon approval, you'll receive your welcome package and access to member benefits</li>
+                </ul>
+            </div>
+
+            <a href="index.html" class="back-home">Return to Homepage</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Contact Information</h3>
+                <p>📍 123 Business District, Abuja, Nigeria</p>
+                <p>📞 +234 9 123 4567</p>
+                <p>✉️ info@abujachamber.org</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Twitter">🐦</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Abuja Chamber of Commerce. All rights reserved.</p>
+            <p>Last Modified: <span id="lastModified"></span></p>
+        </div>
+    </footer>
+
+    <script src="scripts/chamber.js"></script>
+    <script>
+        // Extract and display form data from URL parameters
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const summaryContent = document.getElementById('summaryContent');
+            
+            // Define the fields to display (required fields only)
+            const fieldsToShow = [
+                { param: 'firstName', label: 'First Name' },
+                { param: 'lastName', label: 'Last Name' },
+                { param: 'email', label: 'Email Address' },
+                { param: 'mobile', label: 'Mobile Phone' },
+                { param: 'businessName', label: 'Business/Organization Name' },
+                { param: 'membershipLevel', label: 'Membership Level' },
+                { param: 'timestamp', label: 'Application Submitted' }
+            ];
+
+            // Create summary items
+            fieldsToShow.forEach(field => {
+                const value = urlParams.get(field.param);
+                if (value) {
+                    const summaryItem = document.createElement('div');
+                    summaryItem.className = 'summary-item';
+                    
+                    const label = document.createElement('div');
+                    label.className = 'summary-label';
+                    label.textContent = field.label + ':';
+                    
+                    const valueDiv = document.createElement('div');
+                    valueDiv.className = 'summary-value';
+                    
+                    // Format specific fields
+                    if (field.param === 'timestamp') {
+                        const date = new Date(value);
+                        valueDiv.textContent = date.toLocaleString();
+                    } else if (field.param === 'membershipLevel') {
+                        const membershipLevels = {
+                            'np': 'NP Membership (Non-Profit)',
+                            'bronze': 'Bronze Membership',
+                            'silver': 'Silver Membership',
+                            'gold': 'Gold Membership'
+                        };
+                        valueDiv.textContent = membershipLevels[value] || value;
+                    } else {
+                        valueDiv.textContent = decodeURIComponent(value);
+                    }
+                    
+                    summaryItem.appendChild(label);
+                    summaryItem.appendChild(valueDiv);
+                    summaryContent.appendChild(summaryItem);
+                }
+            });
+
+            // If no data found, show message
+            if (summaryContent.children.length === 0) {
+                summaryContent.innerHTML = '<p style="text-align: center; color: var(--text-color);">No application data found. Please return to the <a href="join.html">application form</a>.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
