@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Discovery Hub - Site Plan</title>
+    <meta name="description" content="Welcome to the Cinema Discovery Hub - Site plan. It is designed to help discover new films across different genres and eras">
+    <meta name="author" content="Adeyinka Adedayo">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #e0e0e0;
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-bottom: 2px solid #ff6b35;
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            color: #ff6b35;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            font-style: italic;
+        }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: #ff6b35;
+            margin: 2.5rem 0 1rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #ff6b35;
+        }
+
+        h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            color: #ffd700;
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.05);
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #ff6b35;
+            backdrop-filter: blur(10px);
+        }
+
+        .site-name {
+            font-size: 1.5rem;
+            color: #ff6b35;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .domain-suggestion {
+            color: #ffd700;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        .scenario {
+            background: rgba(255, 107, 53, 0.1);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            border-left: 3px solid #ffd700;
+        }
+
+        .color-demo {
+            display: flex;
+            gap: 2rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .color-box {
+            width: 150px;
+            height: 100px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+        }
+
+        .color-primary {
+            background-color: #ff6b35;
+        }
+
+        .color-secondary {
+            background-color: #ffd700;
+            color: #0f0f23;
+        }
+
+        .color-background {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+        }
+
+        .color-text {
+            background-color: #e0e0e0;
+            color: #0f0f23;
+        }
+
+        .font-demo {
+            margin: 1rem 0;
+        }
+
+        .font-display {
+            font-family: 'Cinzel', serif;
+            font-size: 2rem;
+            color: #ff6b35;
+            margin-bottom: 0.5rem;
+        }
+
+        .font-body {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: #e0e0e0;
+            margin-bottom: 0.5rem;
+        }
+
+        .wireframe-container {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .wireframe {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            color: #333;
+        }
+
+        .wireframe h4 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #ff6b35;
+        }
+
+        .wireframe-mobile {
+            width: 200px;
+            margin: 0 auto;
+        }
+
+        .wireframe-desktop {
+            width: 100%;
+        }
+
+        .wireframe-box {
+            border: 2px solid #ccc;
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            text-align: center;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .header-box {
+            background: #ff6b35;
+            color: white;
+            padding: 1rem;
+        }
+
+        .nav-box {
+            background: #ffd700;
+            color: #333;
+            padding: 0.5rem;
+        }
+
+        .content-box {
+            background: #e0e0e0;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .sidebar-box {
+            background: #d0d0d0;
+            padding: 1rem;
+        }
+
+        .footer-box {
+            background: #333;
+            color: white;
+            padding: 1rem;
+        }
+
+        .desktop-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .color-demo {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .wireframe-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cinema Discovery Hub</h1>
+            <p class="subtitle">Site Plan & Development Blueprint</p>
+        </header>
+
+        <section>
+            <h2>Site Name</h2>
+            <div class="site-name">Cinema Discovery Hub</div>
+            <p>This name was selected because it perfectly captures the essence of the website's primary function - serving as a central hub for movie enthusiasts to discover films across all genres and eras. The word "Cinema" evokes the classic movie experience and artistic nature of film, while "Discovery" emphasizes the exploration and finding of new movies that users might not have encountered otherwise. "Hub" suggests a central gathering place where all movie-related information converges.</p>
+            <p class="domain-suggestion">Optional domain availability: cinemadiscoveryhub.com or cinema-hub.org</p>
+        </section>
+
+        <section>
+            <h2>Site Purpose</h2>
+            <p>Cinema Discovery Hub serves as a comprehensive movie discovery platform that provides users with detailed film information, current releases, and personalized recommendations. The site offers an intuitive interface for browsing movies by genre, year, rating, and popularity, while integrating real-time data from The Movie Database (TMDB) API to ensure current and accurate information.</p>
+            <p>Key services include:</p>
+            <ul style="margin-left: 2rem; margin-top: 1rem;">
+                <li>Comprehensive movie database with detailed information, cast, crew, and ratings</li>
+                <li>Advanced search and filtering capabilities for personalized discovery</li>
+                <li>Current releases and trending movies showcase</li>
+                <li>High-quality poster galleries and trailer integration</li>
+                <li>Mobile-optimized browsing experience for movie discovery on-the-go</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Scenarios</h2>
+            <div class="scenario">
+                <h3>Scenario 1: Weekend Movie Planning</h3>
+                <p><strong>Question:</strong> "I want to find a highly-rated thriller movie from the last 5 years that I haven't seen yet. Can I filter movies by genre, rating, and release year to find something perfect for tonight?"</p>
+                <p><strong>User Need:</strong> Advanced filtering system that allows users to narrow down choices based on multiple criteria to find the perfect movie for their mood and preferences.</p>
+            </div>
+            <div class="scenario">
+                <h3>Scenario 2: Discovering Hidden Gems</h3>
+                <p><strong>Question:</strong> "I love independent films and foreign cinema. How can I discover lesser-known movies that might not be mainstream but have great reviews and compelling stories?"</p>
+                <p><strong>User Need:</strong> Discovery features that highlight independent films, foreign cinema, and movies that might not appear in typical "popular" or "trending" lists but have strong critical acclaim.</p>
+            </div>
+            <div class="scenario">
+                <h3>Scenario 3: Mobile Movie Research</h3>
+                <p><strong>Question:</strong> "I'm at the movie theater and want to quickly look up information about a film, including its rating, cast, and plot summary before deciding whether to watch it."</p>
+                <p><strong>User Need:</strong> Fast, mobile-optimized access to comprehensive movie information with quick loading times and easy-to-read layouts on smaller screens.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Color Schema</h2>
+            <div class="color-demo">
+                <div class="color-box color-primary">#FF6B35<br>Primary/Accent</div>
+                <div class="color-box color-secondary">#FFD700<br>Secondary/Highlight</div>
+                <div class="color-box color-background">Gradient<br>Background</div>
+                <div class="color-box color-text">#E0E0E0<br>Text/Content</div>
+            </div>
+            <h3>Color Usage:</h3>
+            <ul style="margin-left: 2rem;">
+                <li><strong>Cinematic Orange (#FF6B35):</strong> Primary brand color used for headings, buttons, navigation highlights, and call-to-action elements. This warm, energetic color evokes the excitement of cinema and movie posters.</li>
+                <li><strong>Golden Yellow (#FFD700):</strong> Secondary accent color used for ratings, awards, special highlights, and interactive elements like hover states. Represents the glamour and prestige of cinema awards.</li>
+                <li><strong>Dark Gradient Background:</strong> Deep blue-to-purple gradient (#0F0F23 to #16213E) creates a sophisticated, theater-like atmosphere that makes movie posters and content pop visually.</li>
+                <li><strong>Light Gray Text (#E0E0E0):</strong> Primary text color that provides excellent contrast against the dark background while being easy on the eyes for extended reading.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Typography</h2>
+            <div class="font-demo">
+                <div class="font-display">Cinzel - Display Font</div>
+                <p style="color: #b0b0b0; font-style: italic;">Used for: Main headings, site title, section headers</p>
+                
+                <div class="font-body">Inter - Body Font</div>
+                <p style="color: #b0b0b0; font-style: italic;">Used for: Body text, paragraphs, navigation, buttons, descriptions</p>
+            </div>
+            <h3>Font Selection Rationale:</h3>
+            <ul style="margin-left: 2rem;">
+                <li><strong>Cinzel:</strong> A classic, elegant serif font that evokes the golden age of cinema and adds sophistication to headings. Its letterforms have a timeless quality perfect for a movie-focused site.</li>
+                <li><strong>Inter:</strong> A modern, highly legible sans-serif font designed specifically for digital interfaces. Its excellent readability across all device sizes makes it perfect for body text, ensuring users can comfortably read movie descriptions and details.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Wireframes</h2>
+            <div class="wireframe-container">
+                <div class="wireframe">
+                    <h4>Mobile View (320px-768px)</h4>
+                    <div class="wireframe-mobile">
+                        <div class="wireframe-box header-box">
+                            <strong>Cinema Discovery Hub</strong><br>
+                            Logo & Title
+                        </div>
+                        <div class="wireframe-box nav-box">
+                            ☰ Mobile Menu
+                        </div>
+                        <div class="wireframe-box content-box">
+                            Featured Movie<br>
+                            Large Poster
+                        </div>
+                        <div class="wireframe-box content-box">
+                            Search Bar
+                        </div>
+                        <div class="wireframe-box content-box">
+                            Trending Movies<br>
+                            (Horizontal Scroll)
+                        </div>
+                        <div class="wireframe-box content-box">
+                            Genre Categories<br>
+                            (Stacked Vertically)
+                        </div>
+                        <div class="wireframe-box content-box">
+                            Recent Releases<br>
+                            (2-Column Grid)
+                        </div>
+                        <div class="wireframe-box footer-box">
+                            Footer Links
+                        </div>
+                    </div>
+                </div>
+
+                <div class="wireframe">
+                    <h4>Desktop View (1024px+)</h4>
+                    <div class="wireframe-desktop">
+                        <div class="wireframe-box header-box">
+                            <strong>Cinema Discovery Hub Logo</strong> | Navigation: Home | Browse | Genres | About
+                        </div>
+                        <div class="desktop-grid">
+                            <div>
+                                <div class="wireframe-box content-box" style="min-height: 300px;">
+                                    Hero Section: Featured Movie with Large Backdrop<br>
+                                    Title, Rating, Description, Watch Trailer Button
+                                </div>
+                                <div class="wireframe-box content-box">
+                                    Search Bar with Advanced Filters
+                                </div>
+                                <div class="wireframe-box content-box" style="min-height: 200px;">
+                                    Trending Movies - Horizontal Card Layout<br>
+                                    (Movie Posters with Titles & Ratings)
+                                </div>
+                                <div class="wireframe-box content-box" style="min-height: 200px;">
+                                    Recent Releases - 4-Column Grid<br>
+                                    (Movie Posters with Quick Info)
+                                </div>
+                            </div>
+                            <div>
+                                <div class="wireframe-box sidebar-box">
+                                    Quick Genre Filter<br>
+                                    • Action<br>
+                                    • Comedy<br>
+                                    • Drama<br>
+                                    • Horror<br>
+                                    • Sci-Fi<br>
+                                    • More...
+                                </div>
+                                <div class="wireframe-box sidebar-box">
+                                    Top Rated This Week<br>
+                                    (Compact List)
+                                </div>
+                                <div class="wireframe-box sidebar-box">
+                                    Random Movie<br>
+                                    Suggestion
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wireframe-box footer-box">
+                            Footer: About | Privacy | Contact | API Attribution | Social Links
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Implementation Notes</h2>
+            <p>This site plan document demonstrates the color schema and typography selections that will be implemented in the final Cinema Discovery Hub website. The chosen colors create a cinematic atmosphere while ensuring excellent readability and user experience. The typography combination provides both elegance and functionality, suitable for a modern movie discovery platform.</p>
+            <p>The wireframes show responsive design considerations, with the mobile version prioritizing vertical scrolling and touch-friendly interactions, while the desktop version takes advantage of larger screen real estate with a sidebar layout and multi-column grids for efficient content browsing.</p>
+        </section>
+    </div>
+</body>
+</html>
