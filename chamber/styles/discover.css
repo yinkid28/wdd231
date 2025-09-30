@@ -1,0 +1,414 @@
+/* Discover Page Specific Styles */
+
+.discover-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+.discover-main h1 {
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.discover-container {
+    display: grid;
+    grid-template-areas: 
+        "sidebar"
+        "attractions";
+    gap: 2rem;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    grid-area: sidebar;
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.visitor-info, .demographics {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.visitor-info h2, .demographics h2 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+}
+
+.visit-message {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.demographic-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.demographic-item:last-child {
+    border-bottom: none;
+}
+
+.demographic-item strong {
+    color: var(--primary-color);
+}
+
+/* Attractions Grid Styles */
+.attractions-grid {
+    grid-area: attractions;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.attraction-card {
+    background: var(--card-background);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.attraction-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.attraction-card h2 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.attraction-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.attraction-address {
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.attraction-address::before {
+    content: "📍";
+}
+
+.attraction-description {
+    color: var(--text-color);
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.learn-more-btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    align-self: flex-start;
+}
+
+.learn-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Image Hover Effects (Desktop only) */
+@media (min-width: 641px) {
+    .attraction-image {
+        filter: grayscale(20%);
+    }
+    
+    .attraction-card:hover .attraction-image {
+        filter: grayscale(0%);
+        transform: scale(1.05);
+    }
+}
+
+/* Medium Screens (641px to 1024px) */
+@media (min-width: 641px) {
+    .discover-container {
+        grid-template-areas: "attractions attractions";
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .sidebar {
+        grid-area: unset;
+        grid-column: 1 / -1;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .visitor-info, .demographics {
+        flex: 1;
+    }
+    
+    .attractions-grid {
+        grid-area: unset;
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "card1 card2"
+            "card3 card4"
+            "card5 card6"
+            "card7 card8";
+    }
+    
+    .attraction-card:nth-child(1) { grid-area: card1; }
+    .attraction-card:nth-child(2) { grid-area: card2; }
+    .attraction-card:nth-child(3) { grid-area: card3; }
+    .attraction-card:nth-child(4) { grid-area: card4; }
+    .attraction-card:nth-child(5) { grid-area: card5; }
+    .attraction-card:nth-child(6) { grid-area: card6; }
+    .attraction-card:nth-child(7) { grid-area: card7; }
+    .attraction-card:nth-child(8) { grid-area: card8; }
+}
+
+/* Large Screens (1025px and above) */
+@media (min-width: 1025px) {
+    .discover-container {
+        grid-template-areas: "sidebar attractions";
+        grid-template-columns: 300px 1fr;
+    }
+    
+    .sidebar {
+        grid-area: sidebar;
+        flex-direction: column;
+        position: sticky;
+        top: 100px;
+        height: fit-content;
+    }
+    
+    .attractions-grid {
+        grid-area: attractions;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+            "card1 card2 card3"
+            "card4 card5 card6"
+            "card7 card8 .";
+    }
+    
+    .visitor-info, .demographics {
+        flex: none;
+    }
+}
+
+/* Loading and Error States */
+.loading, .error-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-color);
+}
+
+.error-message {
+    color: #d32f2f;
+    background-color: #ffebee;
+    border-radius: 8px;
+}
+
+[data-theme="dark"] .error-message {
+    color: #ff6b6b;
+    background-color: #2d1b1b;
+}
+
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    padding: 1rem;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    padding-right: 2rem;
+    font-size: 1.5rem;
+}
+
+.modal-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--secondary-color);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 10001;
+}
+
+.close-modal:hover {
+    background: var(--primary-color);
+    transform: scale(1.1);
+}
+
+.modal-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.modal-section:last-of-type {
+    border-bottom: none;
+}
+
+.modal-section strong {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.modal-section p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-grid-item {
+    background: var(--background-color);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.modal-grid-item strong {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.modal-grid-item p {
+    margin: 0;
+    white-space: pre-line;
+}
+
+.pro-tip {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.pro-tip strong {
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Prevent body scroll when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Update modal overlay to handle body scroll */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    padding: 1rem;
+    animation: fadeIn 0.3s ease;
+}

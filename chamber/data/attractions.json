@@ -1,0 +1,60 @@
+{
+    "attractions": [
+      {
+        "id": 1,
+        "name": "Warewa Central Market",
+        "address": "1 Market Square, Warewa",
+        "description": "The largest traditional market in Ogun state, offering local crafts, fresh produce, and authentic Nigerian cuisine.",
+        "image": "images/market.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Alowonle Block Industry",
+        "address": "12 Abudu Oladejo, off-Warewa",
+        "description": "Popular producers of Blocks for construction",
+        "image": "images/block_industry.webp"
+      },
+      {
+        "id": 3,
+        "name": "Yoruba Cultural Center",
+        "address": "15 Cultural Road, Warewa",
+        "description": "Dedicated to preserving and showcasing Yoruba heritage through art, music, and traditional performances.",
+        "image": "images/cultural_center.jpg"
+      },
+      {
+        "id": 4,
+        "name": "City View Estate",
+        "address": "City View Estate, Warewa",
+        "description": "Beautiful riverside park perfect for picnics, fishing, and enjoying nature along the Ogun River.",
+        "image": "images/cityview.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Adire Craft Village",
+        "address": "Textile Lane, Warewa",
+        "description": "Traditional textile center where you can watch artisans create beautiful Adire fabric using ancient techniques.",
+        "image": "images/adire_craft.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Warewa Museum of History",
+        "address": "28 Heritage Street, Warewa",
+        "description": "Museum showcasing the rich history of Warewa from pre-colonial times to modern development.",
+        "image": "images/museum.jpeg"
+      },
+      {
+        "id": 7,
+        "name": "Oba's Palace",
+        "address": "Royal Compound, Warewa",
+        "description": "Historic palace of the traditional ruler, featuring stunning Yoruba architecture and royal artifacts.",
+        "image": "images/obas_palace.jpg"
+      },
+      {
+        "id": 8,
+        "name": "Tropical Botanical Gardens",
+        "address": "Garden District, Warewa",
+        "description": "Lush gardens featuring native Nigerian flora, walking trails, and educational exhibits about local ecosystems.",
+        "image": "images/botanical_gardens.png"
+      }
+    ]
+  }

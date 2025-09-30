@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Directory - Warewa Chamber of Commerce</title>
-    <meta name="description" content="Find local businesses and organizations that are members of the Warewa Chamber of Commerce. Connect with the business community and discover services in your area.">
+    <title>Discover Warewa - Warewa Chamber of Commerce</title>
+    <meta name="description" content="Discover the beautiful attractions and landmarks in Warewa, Ogun state. Explore local points of interest and learn about our community.">
     <meta name="author" content="Adeyinka Adedayo">
     
     <!-- Facebook Open Graph Meta Tags -->
-    <meta property="og:title" content="Business Directory - Warewa Chamber of Commerce">
-    <meta property="og:description" content="Find local businesses and organizations that are members of the Warewa Chamber of Commerce. Connect with the business community and discover services in your area.">
-    <meta property="og:image" content="https://yinkid28.github.io/wdd231/chamber/images/warewa-chamber-og.jpg">
-    <meta property="og:url" content="https://yinkid28.github.io/wdd231/chamber/directory.html">
+    <meta property="og:title" content="Discover Warewa - Local Attractions & Landmarks">
+    <meta property="og:description" content="Explore 8 amazing attractions in Warewa, from historic sites to natural wonders and cultural centers.">
+    <meta property="og:image" content="https://yinkid28.github.io/wdd231/chamber/images/warewa-discover.jpg">
+    <meta property="og:url" content="https://yinkid28.github.io/wdd231/chamber/discover.html">
     <meta property="og:type" content="website">
-
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-    
     <!-- CSS Files -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/larger.css">
+    <link rel="stylesheet" href="styles/discover.css">
 </head>
 <body>
     <header>
@@ -37,9 +39,9 @@
                 <button id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu">☰</button>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="directory.html" class="current">Directory</a></li>
+                    <li><a href="directory.html">Directory</a></li>
                     <li><a href="join.html">Join</a></li>
-                    <li><a href="discovery.html">Discover</a></li>
+                    <li><a href="discover.html" class="current">Discover</a></li>
                 </ul>
             </nav>
             <div class="theme-toggle">
@@ -48,32 +50,45 @@
         </div>
     </header>
 
-    <main>
-        <h1>Business Directory - Warewa Chamber of Commerce</h1>
+    <main class="discover-main">
+        <h1>Discover Warewa</h1>
         
-        <section class="directory-header">
-            <h2>Business Directory</h2>
-            <p>Discover the businesses and organizations that make our community thrive</p>
-        </section>
+        <div class="discover-container">
+            <!-- Sidebar with visitor message -->
+            <aside class="sidebar">
+                <div class="visitor-info">
+                    <h2>Visitor Information</h2>
+                    <div id="visit-message" class="visit-message">
+                        <p>Welcome! Let us know if you have any questions.</p>
+                    </div>
+                </div>
+                
+                <div class="demographics">
+                    <h2>Warewa Demographics</h2>
+                    <div class="demographic-item">
+                        <strong>Population:</strong> 85,000
+                    </div>
+                    <div class="demographic-item">
+                        <strong>Founded:</strong> 1820
+                    </div>
+                    <div class="demographic-item">
+                        <strong>Area:</strong> 125 km²
+                    </div>
+                    <div class="demographic-item">
+                        <strong>Elevation:</strong> 320m
+                    </div>
+                    <div class="demographic-item">
+                        <strong>Climate:</strong> Tropical Savannah
+                    </div>
+                </div>
+            </aside>
 
-        <section class="directory-controls">
-            <div class="view-toggle">
-                <button id="grid-view" class="view-btn active" aria-label="Grid view">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z"/>
-                    </svg>
-                </button>
-                <button id="list-view" class="view-btn" aria-label="List view">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/>
-                    </svg>
-                </button>
-            </div>
-        </section>
-
-        <section id="directory-container" class="directory-grid">
-            <div class="loading">Loading member directory...</div>
-        </section>
+            <!-- Main attractions grid -->
+            <section class="attractions-grid" id="attractions-container">
+                <!-- Cards will be populated by JavaScript -->
+                <div class="loading">Loading attractions...</div>
+            </section>
+        </div>
     </main>
 
     <footer>
@@ -117,6 +132,9 @@
         </div>
     </footer>
 
-    <script src="scripts/directory.js"></script>
+    <!-- JSON data file -->
+    <script src="data/attractions.json"></script>
+    <script src="scripts/discover.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 </html>
