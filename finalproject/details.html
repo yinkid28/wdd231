@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View detailed information about movies including cast, crew, ratings, plot summaries, and trailers on Cinema Discovery Hub.">
+    <meta name="author" content="Your Name">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Movie Details - Cinema Discovery Hub">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/wdd231/final/details.html">
+    <meta property="og:image" content="https://yourusername.github.io/wdd231/final/images/og-image.jpg">
+    <meta property="og:description" content="Comprehensive movie information, cast details, and ratings.">
+    
+    <title>Movie Details - Cinema Discovery Hub</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Cinema Discovery Hub</h1>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse.html">Browse Movies</a></li>
+                    <li><a href="details.html" class="active">Movie Details</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Movie Details Hero -->
+        <section class="details-hero" id="detailsHero">
+            <div class="details-backdrop" id="detailsBackdrop"></div>
+            <div class="details-content">
+                <div class="details-poster">
+                    <img id="moviePoster" src="" alt="Movie poster" loading="lazy">
+                    <button class="btn-favorite" id="favoriteBtn" aria-label="Add to favorites">
+                        <span class="heart">♡</span>
+                    </button>
+                </div>
+                <div class="details-info">
+                    <h2 id="movieTitle">Loading Movie Details...</h2>
+                    <div class="movie-meta">
+                        <span id="movieYear"></span>
+                        <span id="movieRuntime"></span>
+                        <span id="movieRating" class="rating"></span>
+                    </div>
+                    <div class="movie-genres" id="movieGenres"></div>
+                    <p id="movieOverview" class="movie-overview"></p>
+                    <div class="movie-actions">
+                        <button class="btn-primary" id="watchTrailerBtn">Watch Trailer</button>
+                        <button class="btn-secondary" id="shareBtn">Share</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cast Section -->
+        <section class="cast-section">
+            <div class="container">
+                <h2>Cast</h2>
+                <div class="cast-grid" id="castGrid">
+                    <div class="loading">Loading cast information...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Movie Stats -->
+        <section class="stats-section">
+            <div class="container">
+                <h2>Movie Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Budget</h3>
+                        <p id="movieBudget">N/A</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Revenue</h3>
+                        <p id="movieRevenue">N/A</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Vote Count</h3>
+                        <p id="movieVoteCount">N/A</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Popularity</h3>
+                        <p id="moviePopularity">N/A</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Similar Movies -->
+        <section class="similar-section">
+            <div class="container">
+                <h2>Similar Movies</h2>
+                <div class="movie-grid" id="similarMovies">
+                    <div class="loading">Loading similar movies...</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Movie Selector -->
+        <section class="selector-section">
+            <div class="container">
+                <h3>View Another Movie</h3>
+                <p>Enter a movie ID or select from popular movies to view details:</p>
+                <div class="movie-selector">
+                    <input type="number" id="movieIdInput" placeholder="Enter Movie ID (e.g., 278)" min="1">
+                    <button class="btn-secondary" id="loadMovieBtn">Load Movie</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Trailer Modal -->
+    <div class="modal-overlay" id="trailerOverlay"></div>
+    <div class="modal modal-trailer" id="trailerModal">
+        <button class="modal-close" id="trailerClose" aria-label="Close trailer">&times;</button>
+        <div class="modal-content">
+            <div class="video-container" id="trailerContainer">
+                <!-- YouTube iframe will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Cinema Discovery Hub</h3>
+                <p>Your gateway to discovering amazing films</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse.html">Browse Movies</a></li>
+                    <li><a href="attributions.html">Attributions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#video-demo" id="videoLink">Video Demonstration</a></li>
+                    <li><a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB API</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Cinema Discovery Hub | <a href="attributions.html">Attributions</a></p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

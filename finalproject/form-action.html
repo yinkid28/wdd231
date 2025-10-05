@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for submitting your movie preferences to Cinema Discovery Hub.">
+    <meta name="author" content="Your Name">
+    <title>Form Submission - Cinema Discovery Hub</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Cinema Discovery Hub</h1>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse.html">Browse Movies</a></li>
+                    <li><a href="details.html">Movie Details</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="form-result-section">
+            <div class="container">
+                <div class="result-card">
+                    <h2>Thank You! 🎬</h2>
+                    <p class="success-message">Your movie preferences have been submitted successfully!</p>
+                    
+                    <div class="submitted-data" id="submittedData">
+                        <!-- Data will be dynamically inserted here -->
+                    </div>
+
+                    <div class="result-actions">
+                        <a href="browse.html" class="btn-primary">Browse More Movies</a>
+                        <a href="index.html" class="btn-secondary">Return Home</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Cinema Discovery Hub</h3>
+                <p>Your gateway to discovering amazing films</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse.html">Browse Movies</a></li>
+                    <li><a href="attributions.html">Attributions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#video-demo" id="videoLink">Video Demonstration</a></li>
+                    <li><a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB API</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Cinema Discovery Hub | <a href="attributions.html">Attributions</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Parse URL parameters and display submitted data
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const dataContainer = document.getElementById('submittedData');
+            
+            if (params.toString()) {
+                let html = '<h3>Your Submitted Information:</h3><div class="data-list">';
+                
+                // Name
+                if (params.get('name')) {
+                    html += `<div class="data-item"><strong>Name:</strong> ${params.get('name')}</div>`;
+                }
+                
+                // Email
+                if (params.get('email')) {
+                    html += `<div class="data-item"><strong>Email:</strong> ${params.get('email')}</div>`;
+                }
+                
+                // Genre
+                if (params.get('genre')) {
+                    html += `<div class="data-item"><strong>Favorite Genre:</strong> ${params.get('genre')}</div>`;
+                }
+                
+                // Frequency
+                if (params.get('frequency')) {
+                    html += `<div class="data-item"><strong>Watching Frequency:</strong> ${params.get('frequency')}</div>`;
+                }
+                
+                // Rating
+                if (params.get('rating')) {
+                    html += `<div class="data-item"><strong>Experience Rating:</strong> ${params.get('rating')}/10</div>`;
+                }
+                
+                // Preferences (multiple checkboxes)
+                const preferences = params.getAll('preferences');
+                if (preferences.length > 0) {
+                    html += `<div class="data-item"><strong>Movie Preferences:</strong> ${preferences.join(', ')}</div>`;
+                }
+                
+                // Comments
+                if (params.get('comments')) {
+                    html += `<div class="data-item"><strong>Comments:</strong> ${params.get('comments')}</div>`;
+                }
+                
+                // Newsletter
+                if (params.get('newsletter')) {
+                    html += `<div class="data-item"><strong>Newsletter Subscription:</strong> Yes</div>`;
+                }
+                
+                html += '</div>';
+                dataContainer.innerHTML = html;
+            } else {
+                dataContainer.innerHTML = '<p class="error">No form data received. Please submit the form from the Browse page.</p>';
+            }
+            
+            // Hamburger menu functionality
+            const hamburger = document.getElementById('hamburger');
+            const mainNav = document.getElementById('mainNav');
+            
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    hamburger.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>

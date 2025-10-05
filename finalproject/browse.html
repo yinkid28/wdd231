@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse and discover movies by genre, year, and rating. Use advanced filters to find your perfect film on Cinema Discovery Hub.">
+    <meta name="author" content="Your Name">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Browse Movies - Cinema Discovery Hub">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/wdd231/final/browse.html">
+    <meta property="og:image" content="https://yourusername.github.io/wdd231/final/images/og-image.jpg">
+    <meta property="og:description" content="Discover movies with advanced filtering by genre, year, and rating.">
+    
+    <title>Browse Movies - Cinema Discovery Hub</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Cinema Discovery Hub</h1>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse.html" class="active">Browse Movies</a></li>
+                    <li><a href="details.html">Movie Details</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Filter Section -->
+        <section class="filter-section">
+            <div class="container">
+                <h2>Discover Movies</h2>
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="genreFilter">Genre</label>
+                        <select id="genreFilter">
+                            <option value="">All Genres</option>
+                            <!-- Options will be dynamically loaded -->
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="yearFilter">Release Year</label>
+                        <select id="yearFilter">
+                            <option value="">All Years</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                            <option value="2010-2019">2010-2019</option>
+                            <option value="2000-2009">2000-2009</option>
+                            <option value="1990-1999">1990-1999</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="ratingFilter">Minimum Rating</label>
+                        <select id="ratingFilter">
+                            <option value="0">All Ratings</option>
+                            <option value="8">8+ ⭐</option>
+                            <option value="7">7+ ⭐</option>
+                            <option value="6">6+ ⭐</option>
+                            <option value="5">5+ ⭐</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="sortFilter">Sort By</label>
+                        <select id="sortFilter">
+                            <option value="popularity.desc">Popularity (High to Low)</option>
+                            <option value="popularity.asc">Popularity (Low to High)</option>
+                            <option value="vote_average.desc">Rating (High to Low)</option>
+                            <option value="vote_average.asc">Rating (Low to High)</option>
+                            <option value="release_date.desc">Release Date (Newest)</option>
+                            <option value="release_date.asc">Release Date (Oldest)</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary" id="applyFilters">Apply Filters</button>
+                    <button class="btn-secondary" id="resetFilters">Reset</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section">
+            <div class="container">
+                <div class="results-header">
+                    <h3 id="resultsTitle">Showing All Movies</h3>
+                    <p id="resultsCount">Loading...</p>
+                </div>
+                <div class="movie-grid" id="browseResults">
+                    <div class="loading">Loading movies...</div>
+                </div>
+                <div class="pagination" id="pagination">
+                    <!-- Pagination buttons will be added here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter/Review Form Section -->
+        <section class="form-section">
+            <div class="container">
+                <h2>Join Our Movie Community</h2>
+                <p>Share your movie preferences and get personalized recommendations!</p>
+                
+                <form id="userPreferencesForm" action="form-action.html" method="get">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="userName">Full Name *</label>
+                            <input type="text" id="userName" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="userEmail">Email Address *</label>
+                            <input type="email" id="userEmail" name="email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="favoriteGenre">Favorite Movie Genre *</label>
+                        <select id="favoriteGenre" name="genre" required>
+                            <option value="">Select a genre</option>
+                            <option value="action">Action</option>
+                            <option value="comedy">Comedy</option>
+                            <option value="drama">Drama</option>
+                            <option value="horror">Horror</option>
+                            <option value="sci-fi">Science Fiction</option>
+                            <option value="romance">Romance</option>
+                            <option value="thriller">Thriller</option>
+                            <option value="animation">Animation</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>How often do you watch movies? *</label>
+                        <div class="radio-group">
+                            <label>
+                                <input type="radio" name="frequency" value="daily" required>
+                                Daily
+                            </label>
+                            <label>
+                                <input type="radio" name="frequency" value="weekly" required>
+                                Weekly
+                            </label>
+                            <label>
+                                <input type="radio" name="frequency" value="monthly" required>
+                                Monthly
+                            </label>
+                            <label>
+                                <input type="radio" name="frequency" value="rarely" required>
+                                Rarely
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="movieRating">Rate Your Movie Experience (1-10) *</label>
+                        <input type="range" id="movieRating" name="rating" min="1" max="10" value="5" required>
+                        <output id="ratingValue">5</output>
+                    </div>
+
+                    <div class="form-group">
+                        <label>What do you look for in movies? (Check all that apply)</label>
+                        <div class="checkbox-group">
+                            <label>
+                                <input type="checkbox" name="preferences" value="story">
+                                Strong Storyline
+                            </label>
+                            <label>
+                                <input type="checkbox" name="preferences" value="acting">
+                                Great Acting
+                            </label>
+                            <label>
+                                <input type="checkbox" name="preferences" value="visuals">
+                                Visual Effects
+                            </label>
+                            <label>
+                                <input type="checkbox" name="preferences" value="soundtrack">
+                                Soundtrack
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comments">Additional Comments</label>
+                        <textarea id="comments" name="comments" rows="4" placeholder="Tell us about your movie preferences..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="newsletter" value="yes">
+                            Subscribe to our movie newsletter
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Submit Preferences</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Cinema Discovery Hub</h3>
+                <p>Your gateway to discovering amazing films</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse.html">Browse Movies</a></li>
+                    <li><a href="attributions.html">Attributions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#video-demo" id="videoLink">Video Demonstration</a></li>
+                    <li><a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB API</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Cinema Discovery Hub | <a href="attributions.html">Attributions</a></p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
