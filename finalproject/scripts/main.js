@@ -336,6 +336,8 @@ import {
     setupMovieIdInput();
   }
   
+
+  // Using a try-catch block to handle any errors that might occur during the fetch operation.
   async function loadMovieDetails(movieId) {
     try {
       const movie = await fetchMovieDetails(movieId);
@@ -346,6 +348,7 @@ import {
       showError('Failed to load movie details. Please try again.');
     }
   }
+  
   
   function displayMovieDetails(movie) {
     // Update backdrop

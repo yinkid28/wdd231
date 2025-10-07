@@ -10,6 +10,8 @@ const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p';
  * Fetch trending movies for the week
  * @returns {Promise<Array>} Array of trending movie objects
  */
+
+//Fetch trending movies function making an asynchronous call to the TMDB endpoint
 export async function fetchTrendingMovies() {
   try {
     const response = await fetch(
