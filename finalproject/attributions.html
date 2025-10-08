@@ -3,64 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Attributions and credits for Cinema Discovery Hub - All sources, APIs, and resources used in this project.">
+    <meta name="author" content="Adeyinka Adedayo">
+    
     <title>Attributions - Cinema Discovery Hub</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/attributions.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Cinema Discovery Hub - Attributions</h1>
-    
-    <h2>API & Data Sources</h2>
-    <ul>
-        <li>
-            <strong>The Movie Database (TMDB) API</strong><br>
-            All movie data, images, ratings, and information provided by TMDB.<br>
-            <a href="https://www.themoviedb.org/" target="_blank">https://www.themoviedb.org/</a><br>
-            This product uses the TMDB API but is not endorsed or certified by TMDB.
-        </li>
-    </ul>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="site-title">Cinema Discovery Hub</div>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse.html">Browse Movies</a></li>
+                    <li><a href="details.html">Movie Details</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <h2>Fonts</h2>
-    <ul>
-        <li>
-            <strong>Cinzel</strong> - Display font for headings<br>
-            Designed by Natanael Gama<br>
-            <a href="https://fonts.google.com/specimen/Cinzel" target="_blank">Google Fonts - Cinzel</a>
-        </li>
-        <li>
-            <strong>Inter</strong> - Body font<br>
-            Designed by Rasmus Andersson<br>
-            <a href="https://fonts.google.com/specimen/Inter" target="_blank">Google Fonts - Inter</a>
-        </li>
-    </ul>
+    <main>
+        <div class="container">
+            <h1>Attributions & Credits</h1>
+            <p class="intro-text">This page acknowledges all the resources, APIs, tools, and content sources used in the Cinema Discovery Hub project.</p>
 
-    <h2>Images</h2>
-    <ul>
-        <li>Movie posters, backdrops, and promotional images: &copy; Their respective studios and distributors, provided via TMDB API</li>
-        <li>Actor profile images: &copy; Their respective owners, provided via TMDB API</li>
-    </ul>
+            <!-- API Section -->
+            <section class="attribution-section">
+                <div class="section-icon">🎬</div>
+                <h2>API & Data Sources</h2>
+                <div class="attribution-card">
+                    <h3>The Movie Database (TMDB)</h3>
+                    <p>All movie data, including titles, descriptions, ratings, posters, backdrops, cast information, and crew details are provided by TMDB through their comprehensive API.</p>
+                    <div class="attribution-links">
+                        <a href="https://www.themoviedb.org/" target="_blank" rel="noopener" class="btn-link">Visit TMDB</a>
+                        <a href="https://www.themoviedb.org/documentation/api" target="_blank" rel="noopener" class="btn-link">API Documentation</a>
+                    </div>
+                    <p class="disclaimer">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+                    <div class="tmdb-logo">
+                        <img src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg" alt="TMDB Logo" loading="lazy">
+                    </div>
+                </div>
+            </section>
 
-    <h2>Tools & Technologies</h2>
-    <ul>
-        <li>HTML5, CSS3, JavaScript (ES6 Modules)</li>
-        <li>TMDB API for movie data</li>
-        <li>Google Fonts for typography</li>
-        <li>GitHub Pages for hosting</li>
-    </ul>
+            <!-- Fonts Section -->
+            <section class="attribution-section">
+                <div class="section-icon">🔤</div>
+                <h2>Typography</h2>
+                <div class="attribution-card">
+                    <h3>Cinzel</h3>
+                    <p><strong>Designer:</strong> Natanael Gama</p>
+                    <p><strong>Usage:</strong> Display font for headings, titles, and branding</p>
+                    <p><strong>License:</strong> SIL Open Font License</p>
+                    <a href="https://fonts.google.com/specimen/Cinzel" target="_blank" rel="noopener" class="btn-link">View on Google Fonts</a>
+                </div>
+                
+                <div class="attribution-card">
+                    <h3>Inter</h3>
+                    <p><strong>Designer:</strong> Rasmus Andersson</p>
+                    <p><strong>Usage:</strong> Body font for paragraphs, navigation, and UI elements</p>
+                    <p><strong>License:</strong> SIL Open Font License</p>
+                    <a href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener" class="btn-link">View on Google Fonts</a>
+                </div>
+            </section>
 
-    <h2>Educational Purpose</h2>
-    <p>
-        This website was created as a student project for WDD 231 - Web Frontend Development at Brigham Young University - Idaho.
-        It is intended for educational purposes only and not for commercial use.
-    </p>
+            <!-- Images Section -->
+            <section class="attribution-section">
+                <div class="section-icon">🖼️</div>
+                <h2>Images & Media</h2>
+                <div class="attribution-card">
+                    <h3>Movie Posters & Backdrops</h3>
+                    <p>All movie posters, backdrop images, and promotional materials are property of their respective studios and distributors. Images are accessed through the TMDB API and are used for educational purposes only.</p>
+                    <p class="copyright">&copy; Copyright belongs to the respective movie studios and production companies.</p>
+                </div>
+                
+                <div class="attribution-card">
+                    <h3>Actor & Crew Profile Images</h3>
+                    <p>Profile photographs of actors, directors, and crew members are provided via TMDB API and are property of their respective copyright holders.</p>
+                    <p class="copyright">&copy; Copyright belongs to the respective individuals and photographers.</p>
+                </div>
+            </section>
 
-    <h2>Student Information</h2>
-    <p>
-        <strong>Created by:</strong> [Adeyinka Adedayo]<br>
-        <strong>Course:</strong> WDD 231 - Web Frontend Development<br>
-        <strong>Institution:</strong> BYU-Idaho<br>
-        <strong>Year:</strong> 2024
-    </p>
+            <!-- Tools Section -->
+            <section class="attribution-section">
+                <div class="section-icon">🛠️</div>
+                <h2>Development Tools & Technologies</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <h4>HTML5</h4>
+                        <p>Semantic markup and structure</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>CSS3</h4>
+                        <p>Styling and responsive design</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>JavaScript ES6+</h4>
+                        <p>Interactive functionality and API integration</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>TMDB API</h4>
+                        <p>Movie data and information</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>GitHub</h4>
+                        <p>Version control and code hosting</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>GitHub Pages</h4>
+                        <p>Website hosting and deployment</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>Google Fonts</h4>
+                        <p>Web typography</p>
+                    </div>
+                    <div class="tech-item">
+                        <h4>VS Code</h4>
+                        <p>Code editor</p>
+                    </div>
+                </div>
+            </section>
 
-    <hr>
-    <p><a href="index.html">Return to Home</a></p>
+            <!-- Inspiration Section -->
+            <section class="attribution-section">
+                <div class="section-icon">💡</div>
+                <h2>Inspiration & References</h2>
+                <div class="attribution-card">
+                    <h3>Design Inspiration</h3>
+                    <p>The design and user experience of Cinema Discovery Hub was inspired by modern movie streaming platforms and database websites, with a focus on clean, intuitive interfaces and cinematic aesthetics.</p>
+                </div>
+            </section>
+
+            <!-- Educational Section -->
+            <section class="attribution-section">
+                <div class="section-icon">🎓</div>
+                <h2>Educational Purpose</h2>
+                <div class="attribution-card educational">
+                    <h3>Academic Project Disclaimer</h3>
+                    <p>This website was created as a student project for <strong>WDD 231 - Web Frontend Development</strong> at <strong>Brigham Young University - Idaho</strong>.</p>
+                    
+                    <div class="project-details">
+                        <p><strong>Course:</strong> WDD 231 - Web Frontend Development</p>
+                        <p><strong>Institution:</strong> Brigham Young University - Idaho</p>
+                        <p><strong>Student:</strong> Adeyinka Adedayo</p>
+                        <p><strong>Instructor:</strong> [Instructor Name]</p>
+                        <p><strong>Semester:</strong> Fall 2024</p>
+                    </div>
+                    
+                    <p class="disclaimer"><strong>Important:</strong> This project is intended solely for educational purposes as part of coursework. It is not intended for commercial use, public distribution, or monetary gain. All content and resources are used within the scope of fair use for educational projects.</p>
+                </div>
+            </section>
+
+            <!-- Learning Outcomes Section -->
+            <section class="attribution-section">
+                <div class="section-icon">📚</div>
+                <h2>Learning Outcomes Demonstrated</h2>
+                <div class="outcomes-grid">
+                    <div class="outcome-item">
+                        <h4>✓ API Integration</h4>
+                        <p>Fetching and displaying data from external APIs</p>
+                    </div>
+                    <div class="outcome-item">
+                        <h4>✓ Responsive Design</h4>
+                        <p>Mobile-first, adaptive layouts</p>
+                    </div>
+                    <div class="outcome-item">
+                        <h4>✓ JavaScript ES6 Modules</h4>
+                        <p>Modular code organization</p>
+                    </div>
+                    <div class="outcome-item">
+                        <h4>✓ Asynchronous Operations</h4>
+                        <p>Promises, async/await, error handling</p>
+                    </div>
+                    <div class="outcome-item">
+                        <h4>✓ Local Storage</h4>
+                        <p>Client-side data persistence</p>
+                    </div>
+                    <div class="outcome-item">
+                        <h4>✓ Accessibility</h4>
+                        <p>WCAG compliant, semantic HTML</p>
+                    </div>
+                    <div class="outcome-item">
+                        <h4>✓ Form Handling</h4>
+                        <p>User input validation and processing</p>
+                    </div>
+                    <div class="outcome-item">
+                        <h4>✓ Modal Dialogs</h4>
+                        <p>Interactive UI components</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Special Thanks -->
+            <section class="attribution-section">
+                <div class="section-icon">🙏</div>
+                <h2>Special Thanks</h2>
+                <div class="attribution-card">
+                    <ul class="thanks-list">
+                        <li><strong>TMDB Team</strong> - For providing a comprehensive and free API for educational projects</li>
+                        <li><strong>BYU-Idaho Faculty</strong> - For guidance and instruction throughout this course</li>
+                        <li><strong>Open Source Community</strong> - For the tools and resources that made this project possible</li>
+                        <li><strong>Google Fonts</strong> - For providing high-quality, free web fonts</li>
+                        <li><strong>MDN Web Docs</strong> - For comprehensive web development documentation</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="attribution-section">
+                <div class="section-icon">📧</div>
+                <h2>Contact & Repository</h2>
+                <div class="attribution-card">
+                    <p>For questions about this project or to view the source code:</p>
+                    <div class="contact-info">
+                        <p><strong>GitHub Repository:</strong> <a href="https://github.com/yinkid28/wdd231" target="_blank" rel="noopener">github.com/yinkid28/wdd231</a></p>
+                        <p><strong>Project Path:</strong> /final/</p>
+                        <p><strong>Student Email:</strong> <a href="mailto:aadedayo1@byupathway.edu">aadedayo1@byupathway.edu</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Copyright Notice -->
+            <section class="attribution-section final-notice">
+                <div class="attribution-card copyright-notice">
+                    <h3>Copyright & Fair Use</h3>
+                    <p>All copyrighted materials referenced in this project are used under the principles of fair use for educational purposes. This project makes no claim to ownership of any third-party content, trademarks, or intellectual property.</p>
+                    <p>If you are a copyright holder and have concerns about the use of your content in this educational project, please contact the student or institution directly.</p>
+                    <p class="final-copyright">&copy; 2024 Cinema Discovery Hub Project | Created for Educational Purposes</p>
+                </div>
+            </section>
+
+            <!-- Back to Home -->
+            <div class="back-home">
+                <a href="index.html" class="btn-primary">← Back to Home</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Cinema Discovery Hub</h3>
+                <p>Your gateway to discovering amazing films</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="browse.html">Browse Movies</a></li>
+                    <li><a href="attributions.html">Attributions</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="https://go.screenpal.com/watch/cT6iYtnDWcs" id="videoLink">Video Demonstration</a></li>
+                    <li><a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB API</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Cinema Discovery Hub | Educational Project</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mainNav = document.getElementById('mainNav');
+            
+            if (hamburger && mainNav) {
+                hamburger.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    hamburger.classList.toggle('active');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!hamburger.contains(e.target) && !mainNav.contains(e.target)) {
+                        mainNav.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

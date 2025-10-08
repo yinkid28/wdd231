@@ -1,0 +1,125 @@
+/* ===== HOME.CSS - Homepage specific styles ===== */
+
+/* ===== HERO SECTION ===== */
+.hero {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 3rem;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+.hero-meta {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.hero-meta span {
+    background: rgba(255, 107, 53, 0.8);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* ===== SEARCH SECTION ===== */
+.search-section {
+    padding: 2rem 0;
+    background: var(--card-bg);
+}
+
+.search-box {
+    display: flex;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--card-border);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.search-box input:focus {
+    border-color: var(--primary);
+}
+
+/* ===== SECTIONS ===== */
+.trending-section,
+.popular-section {
+    padding: 3rem 0;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.genres-section {
+    padding: 3rem 0;
+}
+
+/* ===== GENRE BUTTONS ===== */
+.genre-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.genre-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    color: var(--text);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-family: var(--font-body);
+}
+
+.genre-btn:hover, 
+.genre-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hero-content h2 { font-size: 2rem; }
+    .hero { min-height: 400px; }
+}
+
+@media (max-width: 480px) {
+    .hero-content { padding: 1rem; }
+    .hero-content h2 { font-size: 1.5rem; }
+    .hero-meta { flex-direction: column; gap: 0.5rem; }
+}
